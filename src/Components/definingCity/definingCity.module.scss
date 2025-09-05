@@ -1,0 +1,22 @@
+$radius: 4rem;
+
+.definingCity {
+    width: 30%;
+    height: 30%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(24, 40, 185, 0.7);
+    border-radius: $radius;
+    .definingCity__geo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .definingCity__geo_city {
+            font: 2rem "Roboto", sans;
+        }
+    }
+}
