@@ -1,4 +1,5 @@
 $radius: 4rem;
+$bcolor: rgba(177, 177, 177, 0.5);
 .wrapper {
     width: 144rem;
     height: 90rem;
@@ -12,7 +13,7 @@ $radius: 4rem;
     .wrapper__section {
         width: 90%;
         height: 85%;
-        background-color: rgba(24, 40, 185, 0.5);
+        background-color: $bcolor;
         border-radius: $radius;
     }
 }
