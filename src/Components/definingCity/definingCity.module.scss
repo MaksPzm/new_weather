@@ -1,8 +1,8 @@
 $radius: 4rem;
 $bcolor: rgba(200, 201, 202, 0.4);
 .definingCity {
-    width: 30%;
-    height: 30%;
+    width: 50rem;
+    height: 25rem;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@ $bcolor: rgba(200, 201, 202, 0.4);
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 0.7rem;
         .definingCity__geo_city {
             font: 500 3rem "Roboto", sans-serif;
             display: flex;
@@ -34,7 +35,7 @@ $bcolor: rgba(200, 201, 202, 0.4);
                 border-radius: 0.5rem;
                 box-shadow: 0 5px 10px;
                 cursor: pointer;
-                transition: 0.6s;
+                transition: 0.2s;
             }
             .definingCity__geo_blockBtn_btn:hover {
                 background-color: rgb(15, 231, 231);
@@ -52,9 +53,10 @@ $bcolor: rgba(200, 201, 202, 0.4);
         border-radius: 0.5rem;
         cursor: pointer;
         box-shadow: 0 5px 10px;
+        padding-left: 5px
         }
         .definingCity__blockSearch_input:focus {
-            background-color: rgb(15, 231, 231);
+            background-color: rgb(15, 231, 231); 
         }
         .definingCity__blockSearch_btn {
             @extend .definingCity__blockSearch_input;

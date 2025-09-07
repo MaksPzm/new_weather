@@ -10,10 +10,16 @@ $bcolor: rgba(177, 177, 177, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    .wrapper__defCity {
+        position: absolute;
+        width: 50rem;
+    }
     .wrapper__section {
         width: 90%;
         height: 85%;
         background-color: $bcolor;
         border-radius: $radius;
+        
     }
 }
