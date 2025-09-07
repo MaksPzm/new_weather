@@ -13,9 +13,6 @@ export default function Layout(): React.JSX.Element {
         setCity(name)
         setShowDefiningCity(showBlockDefiningCity)
     }, []);
-    const showBlockDefCity = useCallback(() => {
-
-    }, [showDefiningCity])
     useEffect(() => {
         if (!showDefiningCity) {
             blockDefCity.current.remove()
