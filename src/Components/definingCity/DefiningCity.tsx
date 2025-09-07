@@ -1,5 +1,5 @@
 import React, { ChangeEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useFentchCityWeather } from "../../Api/api";
+import { useFetchCityWeather } from "../../Api/api";
 import styles from "./definingCity.module.scss"
 import { log } from "console";
 
@@ -22,7 +22,7 @@ export default function DefiningCity({nameCity}: ComponentProps): React.JSX.Elem
         setNav({lat: latitude, lon: longitude})
         })
     }, [])
-    const data = useFentchCityWeather(nav.lat, nav.lon);
+    const data = useFetchCityWeather(nav.lat, nav.lon);
     const { name } = data;
     useEffect(() => {
             if (typeof name !== "string") return;
