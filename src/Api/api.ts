@@ -40,7 +40,7 @@ function useFetchCityWeather(lat: number, lon: number) {
 function useFethchWeatherFiveDays(lat: number, lon: number) {
     const [resultAPI, setResultAPI] = useState({})
     useEffect(() => {
-        fetch(`https://www.meteosource.com/api/v1/free/point?lat=${props.lat}&lon=${props.lon}&sections=current%2Cdaily&language=en&units=metric&key=0yhpulmq0puhpdn841y7aklgjd638ep6b7ak9exp`)
+        fetch(`https://www.meteosource.com/api/v1/free/point?lat=${lat}&lon=${lon}&sections=current%2Cdaily&language=en&units=metric&key=0yhpulmq0puhpdn841y7aklgjd638ep6b7ak9exp`)
             .then((response) => response.json())
             .then((result) => {
                 setResultAPI(result)
@@ -59,18 +59,17 @@ function useFethchWeatherFiveDays(lat: number, lon: number) {
 
 function useLocation(titleCity: string) {
     const [geocoding, setGeocoding] = useState<{}>({});
-    const [coordinates, setCoordinates] = useState<coordinates>({lat: 0, lon: 0});
     useEffect(() => {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${titleCity},643&limit=1&appid=7a7246067a4dacd8861ed493fa0284f1`)
             .then((response) => response.json())
             .then((data) => {
             setGeocoding(data);
-            setCoordinates{lat: data[0].lat, lon: data[0].lon};
             })
             .catch(err => {
                 console.log('Ошибка запроса');
             })
-    }, [])
+    }, [titleCity])
+    return geocoding;
 }
 
 //   useEffect(() => {
@@ -83,4 +82,4 @@ function useLocation(titleCity: string) {
 //         });
 //   }, [geocoding])
 
-export { useFetchCityWeather };
+export { useFetchCityWeather, useLocation, useFethchWeatherFiveDays };
