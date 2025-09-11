@@ -20,7 +20,6 @@ export default function Layout(): React.JSX.Element {
             blockWrapper.current.insertAdjacentElement("afterbegin", blockDefCity.current)
         }
     }, [showDefiningCity])
-    console.log("CITY", city);
     
     return (
         <div className={styles.wrapper} ref={blockWrapper}>
