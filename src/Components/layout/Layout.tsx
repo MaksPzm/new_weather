@@ -9,6 +9,7 @@ export default function Layout(): React.JSX.Element {
     const blockWrapper = useRef<unknown>(null) as elRefDiv;
     const [city, setCity] = useState<string>("Москва");
     const [showDefiningCity, setShowDefiningCity] = useState<boolean>(true);
+    const [isActive, setActive] = useState<boolean>(false)
     const nameCity = useCallback((name: string, showBlockDefiningCity: boolean) => {
         setCity(name)
         setShowDefiningCity(showBlockDefiningCity)
@@ -16,6 +17,7 @@ export default function Layout(): React.JSX.Element {
     useEffect(() => {
         if (!showDefiningCity) {
             blockDefCity.current.remove()
+            setActive(true)
         } else {
             blockWrapper.current.insertAdjacentElement("afterbegin", blockDefCity.current)
         }
@@ -27,7 +29,7 @@ export default function Layout(): React.JSX.Element {
                 {showDefiningCity && <DefiningCity nameCity={nameCity}/>}
             </div>
             <div className={styles.wrapper__section}>
-                <Weather nameCity={city}/>    
+                {isActive && <Weather nameCity={city}/>}    
 
             </div>
         </div>
