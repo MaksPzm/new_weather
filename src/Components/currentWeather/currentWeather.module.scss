@@ -1,0 +1,55 @@
+$radius: 4rem;
+.weather__block_now {
+    width: 40rem;
+    height: 60rem;
+    border-radius: $radius;
+    background-color: rgb(15, 117, 233, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    .weather__block_now_title {
+        padding-top: 2rem;
+        font-size: 2rem;
+        color: rgb(8, 41, 78);
+    }
+    .weather__block_now_section {
+        width: 30rem;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: $radius;
+        background-color: rgb(206, 206, 206, 0.5);
+        gap: 2rem;
+        .weather__block_now_section_cur {
+            font-size: 10rem;
+            font-weight: 700;
+            color: rgb(8, 41, 78);
+            display: flex;
+            align-items: center;
+            position: relative;
+            .weather__block_now_section_cur_ico {
+                width: 9rem;
+                position: absolute;
+                bottom: 0;
+                right: -6rem;
+            }
+            .weather__block_now_section_cur_c {
+                font-size: 3rem;
+                margin-top: -5rem;
+                font-weight: 500;
+            }
+        }
+        .weather__block_now_section_wind {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: rgb(8, 41, 78);
+            border-radius: $radius;
+            background-color: rgb(15, 117, 233, 0.5);
+            padding: 1rem
+        }
+        
+    }
+}

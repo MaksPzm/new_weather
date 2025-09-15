@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { createContext, memo, useEffect, useState } from "react";
 import styles from "./weather.module.scss";
 import WeatherToDo from "../weatherToDo/WeatherToDo";
 
@@ -9,6 +9,7 @@ interface geocoding {
     lat: number,
     lon: number
 }
+
 
 interface api {
     temperature: number,
@@ -21,6 +22,32 @@ interface api {
         speed: number,
     }; 
 }
+
+type resultToDo = {
+    resultToDo: {
+    temperature: number,
+    temperature_max: number,
+    temperature_min: number,
+    icon: number,
+     wind: {
+        angle: number,
+        dir: string,
+        speed: number,
+    }; 
+}
+}
+
+const defaultValue: resultToDo = {
+    resultToDo: {
+        temperature: 0, 
+        temperature_max: 0, 
+        temperature_min: 0, 
+        icon: 0,
+        wind: {angle: 0, dir: "", speed: 0} 
+    
+    }
+}
+export const WeatherContext = createContext<resultToDo>(defaultValue);
 
 export default function Weather({nameCity}: ComponentProps): React.JSX.Element {
     const [geocoding, setGeocoding] = useState<geocoding>({lat: 0, lon: 0});
@@ -49,8 +76,10 @@ export default function Weather({nameCity}: ComponentProps): React.JSX.Element {
             })
     }, [lat, lon])
     return (
+    <WeatherContext.Provider value={{resultToDo}}>
         <div>
             <WeatherToDo resultToDo={resultToDo} nameCity={nameCity}/>
         </div>
+    </WeatherContext.Provider>
     )
 }
