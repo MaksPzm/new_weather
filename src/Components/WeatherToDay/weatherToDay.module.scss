@@ -1,0 +1,54 @@
+$radius: 4rem;
+$color: rgb(8, 41, 78);
+.weatherToDay {
+    width: 40rem;
+    height: 45rem;
+    border-radius: $radius;
+    background-color: rgb(15, 117, 233, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    color: $color;
+    .weatherToDay__date {
+        font-size: 2rem;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+    .weatherToDay__block {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .weatherToDay__block_temp {
+            width: 30rem;
+            height: 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: $radius;
+            position: relative;
+            background-color: rgb(206, 206, 206, 0.5);
+            .weatherToDay__block_temp_times {
+                position: absolute;
+                top: 0;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+            .weatherToDay__block_temp_day {
+                font-size: 7rem;
+                font-weight: 700;
+                position: relative;
+                line-height: 0;
+                .weatherToDay__block_temp_day_c {
+                    font-size: 4rem;
+                    position: absolute;
+                    top: -1rem;
+                    
+                }
+            }
+        }
+    }
+
+    
+}

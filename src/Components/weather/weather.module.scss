@@ -1,0 +1,17 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .wrap__title {
+        color: white;
+        font-size: 3rem;
+        padding-top: 1rem;
+        font-weight: 500;
+    }
+    .wrap__weather {
+        display: flex;
+        margin: 8rem;
+        gap: 8rem;
+        align-items: center;
+    }
+}
