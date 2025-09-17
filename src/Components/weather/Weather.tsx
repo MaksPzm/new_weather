@@ -2,6 +2,7 @@ import React, { createContext, memo, useEffect, useState } from "react";
 import styles from "./weather.module.scss";
 import WeatherToDay from "../WeatherToDay/WeatherToDay";
 import CurrentWeather from "../currentWeather/CurrentWeather";
+import WeatherFiveDays from "../weatherFiveDays/WeatherFiveDays";
 
 interface ComponentProps {
     nameCity: string
@@ -76,7 +77,8 @@ export default function Weather({nameCity}: ComponentProps): React.JSX.Element {
             <h1 className={styles.wrap__title}>Прогноз погоды: {nameCity}</h1>
             <div className={styles.wrap__weather}>
                 <CurrentWeather/>
-                <WeatherToDay/>
+                {/* <WeatherToDay/> */}
+                <WeatherFiveDays/>
             </div>
             
         </div>
