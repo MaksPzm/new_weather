@@ -1,4 +1,4 @@
-import React, { createContext, memo, Ref, RefObject, useCallback, useEffect, useRef, useState } from "react";
+import React, { useMemo, createContext, memo, Ref, RefObject, useCallback, useEffect, useRef, useState } from "react";
 import styles from "./weather.module.scss";
 import WeatherToDay from "../WeatherToDay/WeatherToDay";
 import CurrentWeather from "../currentWeather/CurrentWeather";
@@ -25,7 +25,8 @@ type data = {
                 dir: string,
                 speed: number
             }
-        }
+        },
+        day: string
        
     }]
 }
@@ -39,7 +40,8 @@ const defaultValueFiveDays: data = {
             temperature_min: 0, 
             icon: 0,
             wind: {angle: 0, dir: "", speed: 0} 
-        }
+        },
+        day: ""
         
     }]
 };
@@ -53,9 +55,9 @@ export default function Weather({nameCity}: ComponentProps): React.JSX.Element {
     const {lat, lon} = geocoding as geocoding;
     const elRef = useRef<unknown>(null) as refEl;
     const [showFiveDays, setShowFiveDays] = useState<boolean>(false);
+    
     const clickWeatherSelectionBtn = useCallback((res: boolean) => {
         setShowFiveDays(res);
-        console.log('elRef' ,elRef);
         if (elRef === null) return;
         if (showFiveDays) {
             elRef.current.innerText = "Погода на 5 дней";
@@ -96,7 +98,7 @@ export default function Weather({nameCity}: ComponentProps): React.JSX.Element {
             
             <div className={styles.wrap__weather}>
                 <CurrentWeather/>
-                {showFiveDays ? <WeatherFiveDays/> : <WeatherToDay/>}
+                {showFiveDays === true ? <WeatherFiveDays/> : <WeatherToDay/>}
             </div>
             
         </div>

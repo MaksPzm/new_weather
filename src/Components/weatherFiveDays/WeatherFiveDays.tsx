@@ -11,7 +11,7 @@ export default function WeatherFiveDays(): React.JSX.Element {
             {data.map((value, index) => {
                 if (index < 5) {
                     return <WDay 
-                        num={index}
+                        index={value.day}
                         tempMax={Math.round(value.all_day.temperature_max)}
                         tempMin={Math.round(value.all_day.temperature_min)}
                         icon={value.all_day.icon}
