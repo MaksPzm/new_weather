@@ -1,15 +1,35 @@
 $radius: 4rem;
+$margins: 2rem;
 .wDay {
     width: 30rem;
-    height: 8rem;
     background-color: rgb(206, 206, 206, 0.5);
     border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .wDay__date {
+        font-size: 1.4rem;
+    }
     .wDay__block {
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        gap: $margins;
         .wDay__block_temp {
             font-size: 3rem;
+            position: relative;
+            .wDay__block_temp_с {
+                position: absolute;
+                top: 0.5rem;
+            }
         }
     }
+}
+
+.wDay:first-child {
+    margin-top: $margins;
+}
+.wDay:last-child {
+    margin-bottom: $margins;
 }

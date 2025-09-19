@@ -1,0 +1,14 @@
+$radius: 4rem;
+.btn {
+    color: white;
+    background-color: rgba(15, 117, 233, 0.5);
+    border: none;
+    border-radius: $radius;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn:hover {
+    color: rgba(15, 117, 233);
+    background-color: white;
+}
