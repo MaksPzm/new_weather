@@ -1,7 +1,6 @@
 import React, { ChangeEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFetchCityWeather } from "../../Api/api";
-import styles from "./definingCity.module.scss"
-import { log } from "console";
+import styles from "./definingCity.module.scss";
 
 interface ComponentProps {
     nameCity: Function
@@ -14,7 +13,6 @@ export default function DefiningCity({nameCity}: ComponentProps): React.JSX.Elem
     const [nav, setNav] = useState<{lat: number, lon: number}>({lat: 0, lon: 0});
     const [city, setCity] = useState<string>("Москва")
     const showBlockСhoosingCity: boolean = false;
-    // const [showBlockСhoosingCity, setShowBlockСhoosingCity] = useState<boolean>(false);
     const elRef = useRef<unknown>(null) as elRef;
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(position => {
@@ -39,7 +37,6 @@ export default function DefiningCity({nameCity}: ComponentProps): React.JSX.Elem
         }
     }, []);
     const clickDone = useCallback(()=> {
-        // setShowBlockСhoosingCity(false);
         nameCity(city, showBlockСhoosingCity);
     }, [city, showBlockСhoosingCity])
     const handlerKeyPress = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {

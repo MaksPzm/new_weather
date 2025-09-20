@@ -2,6 +2,9 @@ import React, { ReactNode, RefObject, useCallback, useEffect, useRef, useState }
 import styles from "./layout.module.scss"
 import DefiningCity from "../definingCity/DefiningCity";
 import Weather from "../weather/Weather";
+import CitySearch from "../citySearch/CitySearch";
+
+
 export type elRefDiv = RefObject<HTMLDivElement>;
 
 export default function Layout(): React.JSX.Element {
@@ -26,9 +29,11 @@ export default function Layout(): React.JSX.Element {
     return (
         <div className={styles.wrapper} ref={blockWrapper}>
             <div className={styles.wrapper__defCity} ref={blockDefCity}>
+                
                 {showDefiningCity && <DefiningCity nameCity={nameCity}/>}
             </div>
             <div className={styles.wrapper__section}>
+                {!showDefiningCity && <CitySearch/>}
                 {isActive && <Weather nameCity={city}/>}    
 
             </div>

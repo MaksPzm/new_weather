@@ -1,0 +1,26 @@
+$radius: 4rem;
+.citySearch {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+    .citySearch__inp {
+        border-radius: $radius;
+        border: none;
+        padding-left: 0.3rem;
+        cursor: pointer;
+    }
+    .citySearch__btn {
+        margin-left: 0.5rem;
+        border-radius: $radius;
+        border: none;
+        padding: 0 0.5rem;
+        background-color: rgba(177, 177, 177, 0.5);
+        color: rgb(19, 43, 70);
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .citySearch__btn:hover {
+        color: rgba(177, 177, 177);
+        background-color: rgb(19, 43, 70, 0.5);;
+    }
+}
